@@ -18,8 +18,7 @@ Here is an example for your dialplan.rb:
 		  parking_spaces = fetch_available_spaces
 
 		  #Then build a soundfile from that data to playback to the user
-		  menu_soundfile = lot_details(parking_spaces)
-		  ahn_log.blah.debug menu_soundfile
+		  menu_soundfile = lot_details(parking_spaces)``
 
 		  #Now lets ask the user for their input
 		  lot_selected = input 1,
