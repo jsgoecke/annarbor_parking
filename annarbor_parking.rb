@@ -3,7 +3,6 @@
 require 'rubygems'
 require 'hpricot'
 require 'open-uri'
-require 'uuidtools'
 
 methods_for :dialplan do
 
@@ -39,7 +38,7 @@ methods_for :dialplan do
                      "."
       cnt += 1
     end
-    filename = COMPONENTS.annarbor_parking[:sound_dir] + UUID.timestamp_create.to_s + ".ulaw"
+    filename = COMPONENTS.annarbor_parking[:sound_dir] + new_guid + ".ulaw"
     system("echo #{menu_message} | text2wave -o #{filename} -otype ulaw")
     return filename.gsub!(".ulaw", "")
   end
@@ -51,7 +50,7 @@ methods_for :dialplan do
                                " has " +
                                parking_spaces[lot.to_i - 1][:spaces] +
                                " spaces available. Thank you for using our service. Goodbye."
-    filename = COMPONENTS.annarbor_parking[:sound_dir] + UUID.timestamp_create.to_s + ".ulaw"
+    filename = COMPONENTS.annarbor_parking[:sound_dir] + new_guid + ".ulaw"
     system("echo #{available_spaces_message} | text2wave -o #{filename} -otype ulaw")
     return filename.gsub!(".ulaw", "")
   end
