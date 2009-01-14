@@ -14,7 +14,7 @@ methods_for :dialplan do
     parking_spaces = Array.new
     cnt = 0
     (doc/"td").each do |row|
-      if row.inner_text =~ /............................/
+      if row.inner_text =~  /\.{28}/
         parking_spaces[cnt].merge!( { :spaces => row.inner_text.gsub("............................  ", "") } )
         cnt += 1
       else
