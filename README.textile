@@ -40,8 +40,8 @@ Here is an example for your dialplan.rb:
 
 h2. Requirements
 
-* xmlsimple 
-* rest_client
+* <a href="http://github.com/why/hpricot/tree/master">hpricot</a>
+* <a href="http://uuidtools.rubyforge.org">uuidtools</a>
 
 h2. Install
 
