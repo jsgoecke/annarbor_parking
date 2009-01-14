@@ -41,6 +41,7 @@ h2. Requirements
 
 * <a href="http://github.com/why/hpricot/tree/master">hpricot</a>
 * <a href="http://uuidtools.rubyforge.org">uuidtools</a>
+* <a href="http://www.cstr.ed.ac.uk/projects/festival/">Festival</a>
 
 h2. Install
 
