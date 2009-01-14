@@ -11,30 +11,30 @@ h2. Example
 Here is an example for your dialplan.rb:
 
 <pre>
-	<code>
-		sandbox {
-		  #Get an Array of Hashes that contains the parking availability details
-		  #by location
-		  parking_spaces = fetch_available_spaces
+<code>
+  sandbox {
+  #Get an Array of Hashes that contains the parking availability details
+  #by location
+  parking_spaces = fetch_available_spaces
 
-		  #Then build a soundfile from that data to playback to the user
-		  menu_soundfile = lot_details(parking_spaces)``
+  #Then build a soundfile from that data to playback to the user
+  menu_soundfile = lot_details(parking_spaces)``
 
-		  #Now lets ask the user for their input
-		  lot_selected = input 1,
-		                       :timeout => 30.seconds,
-		                       :play => menu_soundfile
+  #Now lets ask the user for their input
+  lot_selected = input 1,
+                 :timeout => 30.seconds,
+                 :play => menu_soundfile
 
-		  #Now that we have the user selection, lets build the sound file of the 
-		  #available spaces
-		  if lot_selected != nil
-		    spaces_soundfile = spaces_available(parking_spaces, lot_selected)
-		    play spaces_soundfile
-		  end
+  #Now that we have the user selection, lets build the sound file of the 
+  #available spaces and play it back to the user
+  if lot_selected != nil
+    spaces_soundfile = spaces_available(parking_spaces, lot_selected)
+    play spaces_soundfile
+  end
 
-		  hangup
-		}
-    </code>
+  hangup
+}
+</code>
 </pre>
 
 h2. Requirements
