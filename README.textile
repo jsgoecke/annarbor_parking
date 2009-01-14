@@ -1,0 +1,74 @@
+h1. annarbor_parking
+
+* <a href="http://jsgoecke.github.com/annarbor_parking">http://jsgoecke.github.com/annarbor_parking</a>
+
+h2. Description
+
+Provides an example Adhearsion component that exposes the Ann Arbor, MI parking lot space availability (<a href="http://www.a2dda.org/parking.php">http://www.a2dda.org/parking.php</a>) via an IVR. This example was expired by the folks @ VoIP Tech Chat and their <a href="http://www.voiptechchat.com/voip/218/use-asterisk-cepstral-and-perl-to-get-parking-and-weather-updates/comment-page-1/">Perl example</a>.
+
+h2. Example
+
+Here is an example for your dialplan.rb:
+
+<pre>
+	<code>
+		sandbox {
+		  #Get an Array of Hashes that contains the parking availability details
+		  #by location
+		  parking_spaces = fetch_available_spaces
+
+		  #Then build a soundfile from that data to playback to the user
+		  menu_soundfile = lot_details(parking_spaces)
+		  ahn_log.blah.debug menu_soundfile
+
+		  #Now lets ask the user for their input
+		  lot_selected = input 1,
+		                       :timeout => 30.seconds,
+		                       :play => menu_soundfile
+
+		  #Now that we have the user selection, lets build the sound file of the 
+		  #available spaces
+		  if lot_selected != nil
+		    spaces_soundfile = spaces_available(parking_spaces, lot_selected)
+		    play spaces_soundfile
+		  end
+
+		  hangup
+		}
+    </code>
+</pre>
+
+h2. Requirements
+
+* xmlsimple 
+* rest_client
+
+h2. Install
+
+In the ~ahn_project/components directory:
+
+<pre>git clone git://github.com/jsgoecke/annarbor_parking.git</pre>
+
+h2. License
+
+The MIT License
+ 
+Copyright (c) 2009 Jason Goecke
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
