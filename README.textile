@@ -4,7 +4,7 @@ h1. annarbor_parking
 
 h2. Description
 
-Provides an example Adhearsion component that exposes the Ann Arbor, MI parking lot space availability (<a href="http://www.a2dda.org/parking.php">http://www.a2dda.org/parking.php</a>) via an IVR. This example was expired by the folks @ VoIP Tech Chat and their <a href="http://www.voiptechchat.com/voip/218/use-asterisk-cepstral-and-perl-to-get-parking-and-weather-updates/comment-page-1/">Perl example</a>.
+Provides an example Adhearsion component that exposes the Ann Arbor, MI parking lot space availability (<a href="http://www.a2dda.org/parking__transportation/available_parking_spots/">http://www.a2dda.org/parking.php</a>) via an IVR. This example was expired by the folks @ VoIP Tech Chat and their <a href="http://www.voiptechchat.com/voip/218/use-asterisk-cepstral-and-perl-to-get-parking-and-weather-updates/comment-page-1/">Perl example</a>.
 
 h2. Example
 
