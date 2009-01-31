@@ -4,7 +4,7 @@ h1. annarbor_parking
 
 h2. Description
 
-Provides an example Adhearsion component that exposes the Ann Arbor, MI parking lot space availability (<a href="http://www.a2dda.org/parking__transportation/available_parking_spots/">http://www.a2dda.org/parking.php</a>) via an IVR. This example was expired by the folks @ VoIP Tech Chat and their <a href="http://www.voiptechchat.com/voip/218/use-asterisk-cepstral-and-perl-to-get-parking-and-weather-updates/comment-page-1/">Perl example</a>.
+Provides an example Adhearsion component that exposes the Ann Arbor, MI parking lot space availability (<a href="http://www.a2dda.org/parking__transportation/available_parking_spots/">http://www.a2dda.org/parking.php</a>) via an IVR. This example was inspired by the folks @ VoIP Tech Chat and their <a href="http://www.voiptechchat.com/voip/218/use-asterisk-cepstral-and-perl-to-get-parking-and-weather-updates/comment-page-1/">Perl example</a>.
 
 h2. Example
 
@@ -47,6 +47,12 @@ h2. Install
 In the ~ahn_project/components directory:
 
 <pre>git clone git://github.com/jsgoecke/annarbor_parking.git</pre>
+
+Create a new directory, for the generated Text to Speech files, read/writeable by the user running Adhearsion, by default it is:
+
+<pre>/var/lib/asterisk/sounds/surveys</pre>
+
+You may change the location in the annarbor_parking.yml file, just keep in mind that the user running Asterisk must also have read access.
 
 h2. License
 
